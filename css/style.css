@@ -1,0 +1,20 @@
+/* Header */
+header {
+  background-color: #d9997e;
+}
+header h1 {
+  height: 80px;
+  line-height: 80px;
+}
+
+/* Main */
+main {
+  height: calc(100vh - 88px);
+  background-color: #f0bb96;
+}
+
+#grid {
+  height: 500px;
+  width: 500px;
+  border: 2px dotted black;
+}
