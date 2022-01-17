@@ -7,15 +7,20 @@ Quando l'utente clicca su ogni cella, la cella cliccata si colora di azzurro.
 */
 
 // crea funzione che crea le celle
-// La funzione prende il numero di celle e la difficoltà
-const createCell = (cellsNumber, difficulty) => {
-  const cell = document.createElement('div');
-	cell.className = `cell-${difficulty}`;
-	cell.id = cellsNumber;
-	cell.innerText = cellsNumber
-	return cell;
+// Funzione che crea numeri da a
+
+//* La funzione prende il numero di celle e la difficoltà
+const createCell = (min, max, difficulty) => {
+  for (let i = min; i <= max; i++) {
+		const cell = document.createElement('div');
+		cell.className = `cell-${difficulty}`;
+		cell.id = i;
+		cell.innerText = i
+		return cell;
+	}
 }
 
+document.getElementById('grid').appendChild(createCell(1, 100, 1));
 
 
 

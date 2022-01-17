@@ -27,14 +27,14 @@ main {
 }
 
 #grid .cell-1 {
-  width: calc(100 / 10);
-  height: calc(100 / 10);
+  width: calc(100% / 10);
+  height: calc(100% / 10);
 }
 #grid .cell-2 {
-  width: calc(100 / 9);
-  height: calc(100 / 9);
+  width: calc(100% / 9);
+  height: calc(100% / 9);
 }
 #grid .cell-3 {
-  width: calc(100 / 7);
-  height: calc(100 / 7);
+  width: calc(100% / 7);
+  height: calc(100% / 7);
 }
