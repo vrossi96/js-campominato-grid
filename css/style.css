@@ -18,3 +18,23 @@ main {
   width: 500px;
   border: 2px dotted black;
 }
+
+#grid .cell-1,
+#grid .cell-2,
+#grid .cell-3 {
+  border: 1px solid black;
+  cursor: pointer;
+}
+
+#grid .cell-1 {
+  width: calc(100 / 10);
+  height: calc(100 / 10);
+}
+#grid .cell-2 {
+  width: calc(100 / 9);
+  height: calc(100 / 9);
+}
+#grid .cell-3 {
+  width: calc(100 / 7);
+  height: calc(100 / 7);
+}
