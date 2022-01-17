@@ -1,3 +1,8 @@
+/* Utilities */
+.disabled {
+  display: none;
+}
+
 /* Header */
 header {
   background-color: #d9997e;

@@ -40,9 +40,34 @@ for (let i = 1; i <= 100; i++) {
 let row = 10;
 let column = 10;
 let totalCells = row * column;
+const selectDifficulty = document.getElementById('difficulty').value; 
+const refresh = document.getElementById('refresh');
+const clear = document.getElementById('clear');
 const grid = document.getElementById('grid');
 
-for (let i = 1; i <= 100; i++){
-	console.log(i);
-	createCell(i ,1, grid, i);
-}
+refresh.addEventListener('click', function() {
+	if (selectDifficulty == 'diff-1'){
+		for (let i = 1; i <= 100; i++){
+			console.log(i);
+			createCell(i ,1, grid, i);
+			refresh.className = 'disabled';
+		}
+	} else if (selectDifficulty == 'diff-2') {
+		for (let i = 1; i <= 81; i++){
+			console.log(i);
+			createCell(i ,2, grid, i);
+			refresh.className = 'disabled';
+		}
+	} else {
+		for (let i = 1; i <= 49; i++){
+			console.log(i);
+			createCell(i ,3, grid, i);
+			refresh.className = 'disabled';
+		}
+	}
+})
+
+clear.addEventListener('click', function() {
+	grid.innerHTML = "";
+	refresh.className = '';
+})
