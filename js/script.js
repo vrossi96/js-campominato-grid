@@ -6,31 +6,19 @@ con difficoltà 3 => tra 1 e 49
 Quando l'utente clicca su ogni cella, la cella cliccata si colora di azzurro.
 */
 
-// crea funzione che crea le celle
-// Funzione che crea numeri da a
 
+// crea funzione che crea le celle
 //* La funzione prende il numero di celle e la difficoltà
-const createCell = (difficulty, destination, actualNumber) => {
+const createCell = (difficulty, destination, actualNumber, toggledClass) => {
 		const cell = document.createElement('div');
 		cell.className = `cell-${difficulty} fw-bold d-flex justify-content-center align-items-center`;
 		cell.id = actualNumber;
 		cell.innerText = actualNumber;
+		cell.addEventListener('click', function() {
+			cell.classList.toggle(toggledClass);
+		})
 		return destination.appendChild(cell);
 }
-
-// document.getElementById('grid').appendChild(createCell(1, 100, 1));
-/*
-for (let i = 1; i <= 100; i++) {
-	// console.log('Test', i);
-	const cell = document.createElement('div');
-	cell.className = `cell-1`;
-	cell.id = i;
-	cell.innerText = i;
-	document.getElementById('grid').appendChild(cell);
-}
-*/
-
-
 
 // ---------------------
 // Dati
@@ -45,6 +33,7 @@ refresh.addEventListener('click', function() {
 	const level = selectDifficulty.value;
 	let max;
 	let tipo;
+	let toggledClass = 'colored';
 
 	if (level == 'diff-1'){
 		max = 100;
@@ -57,7 +46,7 @@ refresh.addEventListener('click', function() {
 		tipo = 3;
 	}
 	for (let i = 1; i <= max; i++){
-		createCell(tipo, grid, i);
+		createCell(tipo, grid, i, toggledClass);
 	}
 })
 

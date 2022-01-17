@@ -31,9 +31,9 @@ main {
   width: 500px;
 }
 
-#grid .cell-1,
-#grid .cell-2,
-#grid .cell-3 {
+.cell-1,
+.cell-2,
+.cell-3 {
   background-color: #d9ae7e;
   border: 1px solid black;
   cursor: pointer;
