@@ -10,17 +10,27 @@ Quando l'utente clicca su ogni cella, la cella cliccata si colora di azzurro.
 // Funzione che crea numeri da a
 
 //* La funzione prende il numero di celle e la difficoltà
-const createCell = (min, max, difficulty) => {
-  for (let i = min; i <= max; i++) {
+const createCell = (max, difficulty, destination, actualNumber) => {
+  for (let i = 1; i <= max; i++) {
 		const cell = document.createElement('div');
 		cell.className = `cell-${difficulty}`;
-		cell.id = i;
-		cell.innerText = i
-		return cell;
+		cell.id = actualNumber;
+		cell.innerText = actualNumber;
+		return destination.appendChild(cell);
 	}
 }
 
-document.getElementById('grid').appendChild(createCell(1, 100, 1));
+// document.getElementById('grid').appendChild(createCell(1, 100, 1));
+/*
+for (let i = 1; i <= 100; i++) {
+	// console.log('Test', i);
+	const cell = document.createElement('div');
+	cell.className = `cell-1`;
+	cell.id = i;
+	cell.innerText = i;
+	document.getElementById('grid').appendChild(cell);
+}
+*/
 
 
 
@@ -30,3 +40,9 @@ document.getElementById('grid').appendChild(createCell(1, 100, 1));
 let row = 10;
 let column = 10;
 let totalCells = row * column;
+const grid = document.getElementById('grid');
+
+for (let i = 1; i <= 100; i++){
+	console.log(i);
+	createCell(i ,1, grid, i);
+}
