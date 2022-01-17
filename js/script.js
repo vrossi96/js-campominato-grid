@@ -10,14 +10,12 @@ Quando l'utente clicca su ogni cella, la cella cliccata si colora di azzurro.
 // Funzione che crea numeri da a
 
 //* La funzione prende il numero di celle e la difficoltà
-const createCell = (max, difficulty, destination, actualNumber) => {
-  for (let i = 1; i <= max; i++) {
+const createCell = (difficulty, destination, actualNumber) => {
 		const cell = document.createElement('div');
-		cell.className = `cell-${difficulty}`;
+		cell.className = `cell-${difficulty} fw-bold d-flex justify-content-center align-items-center`;
 		cell.id = actualNumber;
 		cell.innerText = actualNumber;
 		return destination.appendChild(cell);
-	}
 }
 
 // document.getElementById('grid').appendChild(createCell(1, 100, 1));
@@ -37,32 +35,30 @@ for (let i = 1; i <= 100; i++) {
 // ---------------------
 // Dati
 // ---------------------
-let row = 10;
-let column = 10;
-let totalCells = row * column;
-const selectDifficulty = document.getElementById('difficulty').value; 
+const selectDifficulty = document.getElementById('difficulty'); 
 const refresh = document.getElementById('refresh');
 const clear = document.getElementById('clear');
 const grid = document.getElementById('grid');
 
 refresh.addEventListener('click', function() {
-	if (selectDifficulty == 'diff-1'){
-		for (let i = 1; i <= 100; i++){
-			console.log(i);
-			createCell(i ,1, grid, i);
-		}
-	} else if (selectDifficulty == 'diff-2') {
-		for (let i = 1; i <= 81; i++){
-			console.log(i);
-			createCell(i ,2, grid, i);
-		}
+	grid.innerHTML = "";
+	const level = selectDifficulty.value;
+	let max;
+	let tipo;
+
+	if (level == 'diff-1'){
+		max = 100;
+		tipo = 1;
+	} else if (level == 'diff-2') {
+		max = 81;
+		tipo = 2;
 	} else {
-		for (let i = 1; i <= 49; i++){
-			console.log(i);
-			createCell(i ,3, grid, i);
-		}
+		max = 49;
+		tipo = 3;
 	}
-	refresh.className = 'disabled';
+	for (let i = 1; i <= max; i++){
+		createCell(tipo, grid, i);
+	}
 })
 
 clear.addEventListener('click', function() {
