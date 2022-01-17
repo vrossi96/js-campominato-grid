@@ -63,5 +63,4 @@ refresh.addEventListener('click', function() {
 
 clear.addEventListener('click', function() {
 	grid.innerHTML = "";
-	refresh.className = '';
 })
