@@ -37,6 +37,7 @@ main {
   background-color: #d9ae7e;
   border: 1px solid black;
   cursor: pointer;
+  user-select: none;
 }
 
 #grid .cell-1 {
